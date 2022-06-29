@@ -38,4 +38,10 @@ public class Conta {
             this.saldo -= valor;
         }
     }
+
+    public void transferir(double valor, Conta contaDestino) throws SaldoNegativoInvalidoException {
+        this.debitar(valor);
+        contaDestino.creditar(valor);
+    }
+
 }
